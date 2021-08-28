@@ -1,0 +1,6 @@
+{
+  "hello": "Witaj {{name}}!",
+  "nested": {
+    "key": "Wartość odczytany z zagnieżdzonego obiekt"
+  }
+}

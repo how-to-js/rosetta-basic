@@ -1,25 +1,14 @@
 import rosetta from "rosetta";
 
+import en from "./transactions/en.json";
+import es from "./transactions/es.json";
+import pl from "./transactions/pl.json";
+
 const availableLanguages = ["en", "es", "pl"];
 const i18n = rosetta({
-  en: {
-    hello: "Hello {{name}}!",
-    nested: {
-      key: "Value read from a nested object",
-    },
-  },
-  es: {
-    hello: "Hola {{name}}!",
-    nested: {
-      key: "Valor leído desde un objeto anidad",
-    },
-  },
-  pl: {
-    hello: "Witaj {{name}}!",
-    nested: {
-      key: "Wartość odczytany z zagnieżdzonego obiekt",
-    },
-  },
+  en,
+  es,
+  pl,
 });
 
 function pickLanguage() {

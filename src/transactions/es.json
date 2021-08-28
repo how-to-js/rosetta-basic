@@ -1,0 +1,6 @@
+{
+  "hello": "Hola {{name}}!",
+  "nested": {
+    "key": "Valor leído desde un objeto anidad"
+  }
+}

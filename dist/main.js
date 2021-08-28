@@ -72,6 +72,27 @@ const RGX = /{{(.*?)}}/g;
 }
 
 
+/***/ }),
+/* 4 */
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"hello":"Hello {{name}}!","nested":{"key":"Value read from a nested object"}}');
+
+/***/ }),
+/* 5 */
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"hello":"Hola {{name}}!","nested":{"key":"Valor leído desde un objeto anidad"}}');
+
+/***/ }),
+/* 6 */
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"hello":"Witaj {{name}}!","nested":{"key":"Wartość odczytany z zagnieżdzonego obiekt"}}');
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -135,31 +156,21 @@ var __webpack_exports__ = {};
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rosetta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _transactions_en_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _transactions_es_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _transactions_pl_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+
+
+
+
 
 
 const availableLanguages = ["en", "es", "pl"];
 const i18n = (0,rosetta__WEBPACK_IMPORTED_MODULE_0__.default)({
-  en: {
-    hello: "Hello {{name}}!",
-    nested: {
-      key: "Value read from a nested object",
-    },
-  },
-  es: {
-    hello: "Hola {{name}}!",
-    nested: {
-      key: "Valor leído desde un objeto anidad",
-    },
-  },
-  pl: {
-    hello: "Witaj {{name}}!",
-    nested: {
-      key: "Wartość odczytany z zagnieżdzonego obiekt",
-    },
-  },
+  en: _transactions_en_json__WEBPACK_IMPORTED_MODULE_1__,
+  es: _transactions_es_json__WEBPACK_IMPORTED_MODULE_2__,
+  pl: _transactions_pl_json__WEBPACK_IMPORTED_MODULE_3__,
 });
-
-window.i18n = i18n;
 
 function pickLanguage() {
   if (navigator?.languages && navigator.languages.length > 1) {

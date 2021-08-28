@@ -1,0 +1,6 @@
+{
+  "hello": "Hello {{name}}!",
+  "nested": {
+    "key": "Value read from a nested object"
+  }
+}
