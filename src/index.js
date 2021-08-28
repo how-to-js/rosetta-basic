@@ -4,7 +4,19 @@ const i18n = rosetta({
   en: {
     hello: "Hello {{name}}!",
     nested: {
-      key: "Key read from nested object",
+      key: "Value read from a nested object",
+    },
+  },
+  es: {
+    hello: "Hola {{name}}!",
+    nested: {
+      key: "Valor leído desde un objeto anidad",
+    },
+  },
+  pl: {
+    hello: "Witaj {{name}}!",
+    nested: {
+      key: "Wartość odczytany z zagnieżdzonego obiekt",
     },
   },
 });
