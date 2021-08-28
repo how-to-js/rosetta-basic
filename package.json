@@ -1,23 +1,23 @@
 {
-  "name": "webpack-starter",
+  "name": "rosetta-basic",
   "version": "1.0.0",
-  "description": "Code generator for simple webpack application",
+  "description": "Example repository for an article",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --mode=none"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/how-to-js/webpack-starter.git"
+    "url": "git+https://github.com/how-to-js/rosetta-basic.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/how-to-js/webpack-starter/issues"
+    "url": "https://github.com/how-to-js/rosetta-basic/issues"
   },
-  "homepage": "https://github.com/how-to-js/webpack-starter#readme",
+  "homepage": "https://github.com/how-to-js/rosetta-basic#readme",
   "devDependencies": {
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
