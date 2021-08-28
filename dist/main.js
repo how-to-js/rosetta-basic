@@ -137,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rosetta__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
+const availableLanguages = ["en", "es", "pl"];
 const i18n = (0,rosetta__WEBPACK_IMPORTED_MODULE_0__.default)({
   en: {
     hello: "Hello {{name}}!",
@@ -158,6 +159,20 @@ const i18n = (0,rosetta__WEBPACK_IMPORTED_MODULE_0__.default)({
   },
 });
 
+window.i18n = i18n;
+
+function pickLanguage() {
+  if (navigator?.languages && navigator.languages.length > 1) {
+    for (let code of navigator.languages) {
+      if (availableLanguages.includes(code.substr(0, 2))) {
+        return code.substr(0, 2);
+      }
+    }
+  }
+
+  return availableLanguages[0];
+}
+
 const header = document.createElement("div");
 
 function displayTranslated(language) {
@@ -167,7 +182,11 @@ function displayTranslated(language) {
   })}</h1><p>${i18n.t("nested.key")}</p>`;
 }
 
-displayTranslated("en");
+displayTranslated(pickLanguage());
+
+const english = document.createElement("button");
+english.innerHTML = "English";
+english.addEventListener("click", () => displayTranslated("es"));
 
 const polish = document.createElement("button");
 polish.innerHTML = "Polish";
@@ -178,6 +197,7 @@ spanish.innerHTML = "Spanish";
 spanish.addEventListener("click", () => displayTranslated("es"));
 
 document.body.appendChild(header);
+document.body.appendChild(english);
 document.body.appendChild(polish);
 document.body.appendChild(spanish);
 
