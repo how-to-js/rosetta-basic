@@ -141,7 +141,7 @@ const i18n = (0,rosetta__WEBPACK_IMPORTED_MODULE_0__.default)({
   en: {
     hello: "Hello {{name}}!",
     nested: {
-      key: "Value read from nested object",
+      key: "Value read from a nested object",
     },
   },
   es: {
@@ -158,15 +158,28 @@ const i18n = (0,rosetta__WEBPACK_IMPORTED_MODULE_0__.default)({
   },
 });
 
-i18n.locale("en");
-
 const header = document.createElement("div");
 
-header.innerHTML = `<h1>${i18n.t("hello", { name: "Marcin" })}</h1><p>${i18n.t(
-  "nested.key"
-)}</p>`;
+function displayTranslated(language) {
+  i18n.locale(language);
+  header.innerHTML = `<h1>${i18n.t("hello", {
+    name: "Marcin",
+  })}</h1><p>${i18n.t("nested.key")}</p>`;
+}
+
+displayTranslated("en");
+
+const polish = document.createElement("button");
+polish.innerHTML = "Polish";
+polish.addEventListener("click", () => displayTranslated("pl"));
+
+const spanish = document.createElement("button");
+spanish.innerHTML = "Spanish";
+spanish.addEventListener("click", () => displayTranslated("es"));
 
 document.body.appendChild(header);
+document.body.appendChild(polish);
+document.body.appendChild(spanish);
 
 })();
 

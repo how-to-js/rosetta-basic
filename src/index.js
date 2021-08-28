@@ -21,12 +21,25 @@ const i18n = rosetta({
   },
 });
 
-i18n.locale("en");
-
 const header = document.createElement("div");
 
-header.innerHTML = `<h1>${i18n.t("hello", { name: "Marcin" })}</h1><p>${i18n.t(
-  "nested.key"
-)}</p>`;
+function displayTranslated(language) {
+  i18n.locale(language);
+  header.innerHTML = `<h1>${i18n.t("hello", {
+    name: "Marcin",
+  })}</h1><p>${i18n.t("nested.key")}</p>`;
+}
+
+displayTranslated("en");
+
+const polish = document.createElement("button");
+polish.innerHTML = "Polish";
+polish.addEventListener("click", () => displayTranslated("pl"));
+
+const spanish = document.createElement("button");
+spanish.innerHTML = "Spanish";
+spanish.addEventListener("click", () => displayTranslated("es"));
 
 document.body.appendChild(header);
+document.body.appendChild(polish);
+document.body.appendChild(spanish);
